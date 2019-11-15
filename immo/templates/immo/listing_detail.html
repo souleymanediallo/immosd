@@ -1,0 +1,50 @@
+{% extends 'layout/base.html' %}
+{% load humanize %}
+{% block content %}
+<section class="my-3">
+    <div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'listing' %}">Toutes les annonces</a></li>
+            <li class="breadcrumb-item" aria-current="page"><a href="#"></a>Annonce N° : {{ immo.id }}</li>
+        </ol>
+    </nav>
+        </div>
+</section>
+<section class="mb-5">
+    <div class="container">
+        <div class="row">
+            <!-- list -->
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="{{ immo.photo_main.url }}" class="card-img-top">
+                    <div class="card-img-overlay">
+                        <div class="d-flex justify-content-between">
+                        <h2><span class="badge badge-success text-white">{{ immo.price|intcomma }} €</span> </h2>
+                            <div class="text-danger">
+                                <img src="{{ immo.realtor.photo.url }}" class="rounded-circle" width="50 " height="50">
+                                <h2 class="small mt-2 text-center">{{ immo.realtor.name }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h2 class="h6 font-weight-bold">{{ immo.title }}</h2>
+                            <hr>
+                            <div class="d-flex justify-content-between">
+                                <h2 class="h6">{{ immo.address }}</h2>
+                                <h2 class="h6 font-weight-bold text-uppercase">{{ immo.city }}</h2>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- end -->
+        </div>
+    </div>
+</section>
+{% endblock content %}

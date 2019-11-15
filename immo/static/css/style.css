@@ -1,3 +1,23 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+
+.navbar-brand {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.top-menu {
+    background-color: #28a745;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #999999;
+}
+
+/* footer */
